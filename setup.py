@@ -11,9 +11,5 @@ class Build(build):
             sys.exit(-1)
         build.run(self)
 
-
-setup(
-    cmdclass={
-        'build': Build,
-    }
-)
+setup(cmdclass={'build': Buil,})
+setup(packages=['libsvm'])
