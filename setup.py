@@ -1,7 +1,7 @@
 import sys
 
 from setuptools import setup
-import distutils.command.build
+from distutils.command import build
 
 class Build(build):
     """Customized setuptools build command - builds protos on build."""
