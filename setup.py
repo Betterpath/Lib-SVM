@@ -1,6 +1,7 @@
 import distutils.cmd
 import setuptools
 import subprocess
+import sys
 
 from setuptools import setup
 
