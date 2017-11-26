@@ -1,3 +1,4 @@
+import distutils
 import distutils.cmd
 import setuptools
 import subprocess
