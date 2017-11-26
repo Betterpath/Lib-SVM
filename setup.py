@@ -1,16 +1,16 @@
-import distutils
-import distutils.cmd
-import setuptools
-import subprocess
-import sys
+import setuptools.command.build_py
 
-from setuptools import setup
 
-class MyBuild(distutils.cmd.Command):
-    def run(self):
-        protoc_command = ["make"]
-        if subprocess.call(protoc_command) != 0:
-            sys.exit(-1)
-        distutils.command.build.run(self)
+class BuildPyCommand(setuptools.command.build_py.build_py):
+  """Custom build command."""
 
-setup(cmdclass={'build': MyBuild})
+  def run(self):
+    self.run_command('make')
+    setuptools.command.build_py.build_py.run(self)
+
+
+setuptools.setup(
+    cmdclass={
+        'build_py': BuildPyCommand,
+    },
+)
