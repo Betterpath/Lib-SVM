@@ -1,12 +1,11 @@
 import sys
 
 from setuptools import setup
-from distutils.command import build
+import distutils.command.build
 
-class Build(build):
-    """Customized setuptools build command - builds protos on build."""
+class Build(distutils.command.build):
     def run(self):
-        protoc_command = ["make", "python"]
+        protoc_command = ["make"]
         if subprocess.call(protoc_command) != 0:
             sys.exit(-1)
         build.run(self)
