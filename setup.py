@@ -1,7 +1,7 @@
 import sys
 
 from setuptools import setup
-from setuptools.command.build import build
+import distutils.command.build
 
 class Build(build):
     """Customized setuptools build command - builds protos on build."""
@@ -11,5 +11,5 @@ class Build(build):
             sys.exit(-1)
         build.run(self)
 
-setup(cmdclass={'build': Buil,})
+setup(cmdclass={'build': Build,})
 setup(packages=['libsvm'])
