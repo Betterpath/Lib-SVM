@@ -12,4 +12,4 @@ class Build(distutils.command.build):
         distutils.command.build.run(self)
 
 setup(cmdclass={'build': Build,})
-setup(packages=['libsvm'])
+# setup(packages=['libsvm'])
