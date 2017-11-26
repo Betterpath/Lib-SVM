@@ -11,6 +11,6 @@ class BuildPyCommand(setuptools.command.build_py.build_py):
 
 setuptools.setup(
     cmdclass={
-        'build_py': BuildPyCommand,
+        'build': BuildPyCommand,
     },
 )
