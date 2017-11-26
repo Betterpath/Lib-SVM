@@ -1,7 +1,8 @@
 import distutils.cmd
-from setuptools import setup
 import setuptools
 import subprocess
+
+from setuptools import setup
 
 class Build(distutils.cmd.Command):
     def run(self):
